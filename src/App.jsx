@@ -1,42 +1,33 @@
-import Demo from "@/components/Demo";
-import useAuthStore from "@/stores/useAuthStore";
-import { Toaster } from "react-hot-toast";
-import { logoutUser } from "@/utils/authUtils";
-import { toastConfig } from "@/utils/toast";
+import { Routes, Route } from "react-router-dom";
+import Home from "@/pages/Home";
+import Dashboard from "@/pages/Dashboard";
+import Login from "@/pages/auth/Login";
+import { ProtectedRoute } from "@/middleware/ProtectedRoute";
+import Layout from "@/components/Layouts/AuthLayout";
+import AuthLayout from "@/components/Layouts/AuthLayout";
+import MainLayout from "@/components/Layouts/MainLayout";
+import Signup from "./pages/auth/Signup";
 
 function App() {
-  const { user, clearUser } = useAuthStore();
-
-  const handleLogout = () => {
-    logoutUser();
-    clearUser();
-  };
-
   return (
-    <>
-      <div className="min-h-screen bg-gray-100 p-4">
-        <div className="mx-auto max-w-md">
-          <Demo />
+    <Routes>
+      <Route element={<AuthLayout />}>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+      </Route>
 
-          {user ? (
-            <div className="mt-4 rounded bg-white p-4 shadow">
-              <p className="text-lg">
-                Welcome, <span className="font-semibold">{user.name}</span>!
-              </p>
-              <button
-                onClick={handleLogout}
-                className="mt-2 rounded bg-red-600 px-4 py-2 text-white hover:bg-red-700"
-              >
-                Logout
-              </button>
-            </div>
-          ) : (
-            <p className="mt-4 text-center text-gray-600">Please log in to continue</p>
-          )}
-        </div>
-      </div>
-      <Toaster toastOptions={toastConfig} />
-    </>
+      <Route element={<MainLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute allowedRoles={["Public"]}>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+      </Route>
+    </Routes>
   );
 }
 

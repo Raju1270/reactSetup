@@ -2,7 +2,7 @@ import toast from "react-hot-toast";
 
 // Toast configuration
 export const toastConfig = {
-  duration: 4000,
+  duration: 3000,
   position: "top-right",
   style: {
     borderRadius: "8px",
