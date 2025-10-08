@@ -30,7 +30,8 @@ tailwind.config.*
 postcss.config.*
 
 # CSS files with Tailwind directives
-**/index.css
+src/index.css
+index.css
 
 # Other
 coverage/

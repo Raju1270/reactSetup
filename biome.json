@@ -59,9 +59,9 @@
   "javascript": {
     "formatter": {
       "enabled": true,
-      "quoteStyle": "double",
-      "jsxQuoteStyle": "double",
-      "semicolons": "always",
+      "quoteStyle": "single",
+      "jsxQuoteStyle": "single",
+      "semicolons": "asNeeded",
       "trailingCommas": "es5",
       "bracketSpacing": true,
       "bracketSameLine": false,
@@ -110,6 +110,14 @@
           "style": {
             "noDefaultExport": "off"
           }
+        }
+      }
+    },
+    {
+      "includes": ["**/index.css", "**/*tailwind*.css"],
+      "css": {
+        "linter": {
+          "enabled": false
         }
       }
     }

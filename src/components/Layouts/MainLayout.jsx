@@ -1,6 +1,6 @@
-import Navbar from "@/components/Layouts/Navbar";
-import AppSidebar from "@/components/Layouts/Sidebar";
-import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
+import Navbar from '@/components/Layouts/Navbar'
+import AppSidebar from '@/components/Layouts/Sidebar'
+import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar'
 
 export default function Layout({ children }) {
   return (
@@ -9,8 +9,8 @@ export default function Layout({ children }) {
 
       <SidebarInset>
         <Navbar />
-        <div className="p-4">{children}</div>
+        <div className='p-4'>{children}</div>
       </SidebarInset>
     </SidebarProvider>
-  );
+  )
 }
