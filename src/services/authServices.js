@@ -28,7 +28,6 @@ export const SignupService = async (payload) => {
     const response = await apiService.post("api/auth/signup", payload);
 
     if (response?.success && response?.accessToken) {
- 
       useAuthStore.getState().login(response);
       showSuccess("Signup successful!");
 

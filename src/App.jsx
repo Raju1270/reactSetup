@@ -1,11 +1,10 @@
-import { Routes, Route } from "react-router-dom";
-import Home from "@/pages/Home";
-import Dashboard from "@/pages/Dashboard";
-import Login from "@/pages/auth/Login";
-import { ProtectedRoute } from "@/middleware/ProtectedRoute";
-import Layout from "@/components/Layouts/AuthLayout";
+import { Route, Routes } from "react-router-dom";
 import AuthLayout from "@/components/Layouts/AuthLayout";
 import MainLayout from "@/components/Layouts/MainLayout";
+import { ProtectedRoute } from "@/middleware/ProtectedRoute";
+import Login from "@/pages/auth/Login";
+import Dashboard from "@/pages/Dashboard";
+import Home from "@/pages/Home";
 import Signup from "./pages/auth/Signup";
 
 function App() {

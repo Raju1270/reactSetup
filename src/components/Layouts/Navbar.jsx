@@ -1,5 +1,6 @@
 "use client";
 
+import { LogOut, Mail, Menu, Settings, User } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
@@ -11,7 +12,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { useAuthStore } from "@/store/AuthStore";
-import { Menu, User, LogOut, Settings, Mail } from "lucide-react";
 
 export default function Navbar() {
   const { logout } = useAuthStore();

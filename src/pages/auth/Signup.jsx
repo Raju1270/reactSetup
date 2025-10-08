@@ -1,11 +1,11 @@
+import { useMutation } from "@tanstack/react-query";
+import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { SignupService } from "@/services/authServices";
-import { useMutation } from "@tanstack/react-query";
-import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
 
 function Signup() {
   const {
@@ -53,7 +53,7 @@ function Signup() {
                 disabled={isPending}
                 autoComplete="off"
               />
-                {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name.message}</p>}
+              {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name.message}</p>}
             </div>
 
             <div className="grid gap-2">

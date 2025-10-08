@@ -24,3 +24,14 @@ package-lock.json
 # OS files
 .DS_Store
 Thumbs.db
+
+# Config files that might have different formatting requirements
+tailwind.config.*
+postcss.config.*
+
+# CSS files with Tailwind directives
+**/index.css
+
+# Other
+coverage/
+.nyc_output/
